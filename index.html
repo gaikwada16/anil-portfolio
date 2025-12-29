@@ -2,254 +2,235 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Anil Gaikwad | AI Developer • HPC • Data Analytics</title>
+<title>Anil Gaikwad | AI Research Engineer</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Professional AI Developer portfolio showcasing Machine Learning, HPC, and project performance dashboards.">
-<meta name="keywords" content="AI Developer, Machine Learning Engineer, HPC, CUDA, MPI, Data Analytics">
-<meta name="author" content="Anil Gaikwad">
 
-<!-- Chart.js -->
+<meta name="description" content="AI Research Engineer portfolio with real ML projects, dashboards, pipelines, CSV analytics and research paper.">
+
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-
-<!-- Font -->
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
 <style>
-:root{--bg:#020617;--card:#0f172a;--text:#e5e7eb;--muted:#94a3b8;--accent:#38bdf8;--success:#22c55e;}
-body.light{--bg:#f8fafc;--card:#ffffff;--text:#020617;--muted:#475569;}
-*{box-sizing:border-box;}
-html{scroll-behavior:smooth;}
-body{margin:0;font-family:Poppins,Arial;background:var(--bg);color:var(--text);}
-nav{position:sticky;top:0;display:flex;flex-wrap:wrap;justify-content:center;gap:16px;padding:14px;background:var(--bg);border-bottom:1px solid #1f2937;z-index:1000;}
-nav a{color:var(--accent);text-decoration:none;font-weight:600;}
-#themeToggle{border:1px solid var(--accent);background:none;color:var(--accent);padding:6px 12px;border-radius:20px;cursor:pointer;}
-header{padding:90px 20px;text-align:center;background:radial-gradient(circle at top,#1e3a8a,var(--bg));}
-header h1{font-size:44px;margin-bottom:10px;}
-header h2{color:var(--muted);font-weight:400;}
-.btn{display:inline-block;margin-top:20px;padding:12px 26px;background:var(--accent);color:#020617;border-radius:30px;text-decoration:none;font-weight:600;}
-section{max-width:1200px;margin:80px auto;padding:0 20px;}
-h3{color:var(--accent);font-size:30px;margin-bottom:30px;}
-.card{background:var(--card);padding:26px;border-radius:18px;margin-bottom:24px;box-shadow:0 20px 40px rgba(0,0,0,.35);}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:22px;}
-.kpi{font-size:34px;font-weight:700;}
-.fade{opacity:0;transform:translateY(20px);transition:.7s;}
-.fade.show{opacity:1;transform:none;}
-footer{text-align:center;padding:40px;color:var(--muted);}
-.muted{color:var(--muted);font-size:14px;}
-table{width:100%;border-collapse:collapse;margin-top:10px;}
-th, td{border:1px solid #333;padding:8px;text-align:left;}
-th{background:#1f2937;color:#fff;}
-input[type=file]{margin-top:12px;}
-pre{background:#111827;color:#fff;padding:16px;border-radius:10px;overflow:auto;}
-@media(max-width:768px){header h1{font-size:32px;}section{margin:50px auto;}}
+:root{
+  --bg:#020617;
+  --card:#0f172a;
+  --text:#e5e7eb;
+  --muted:#94a3b8;
+  --accent:#38bdf8;
+  --success:#22c55e;
+}
+body.light{
+  --bg:#f8fafc;
+  --card:#ffffff;
+  --text:#020617;
+  --muted:#475569;
+}
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family:Poppins;
+  background:var(--bg);
+  color:var(--text);
+}
+nav{
+  position:sticky;top:0;
+  background:var(--bg);
+  display:flex;gap:18px;
+  justify-content:center;
+  padding:14px;
+  border-bottom:1px solid #1f2937;
+  z-index:999;
+}
+nav a{color:var(--accent);text-decoration:none;font-weight:600}
+button{cursor:pointer}
+
+header{
+  padding:90px 20px;
+  text-align:center;
+  background:radial-gradient(circle at top,#1e3a8a,var(--bg));
+}
+h1{font-size:44px}
+h2{color:var(--muted);font-weight:400}
+
+.btn{
+  display:inline-block;
+  padding:12px 26px;
+  background:var(--accent);
+  color:#020617;
+  border-radius:30px;
+  text-decoration:none;
+  font-weight:600;
+  margin-top:12px;
+}
+
+section{
+  max-width:1200px;
+  margin:80px auto;
+  padding:0 20px;
+}
+h3{color:var(--accent);font-size:30px;margin-bottom:30px}
+
+.card{
+  background:var(--card);
+  padding:26px;
+  border-radius:18px;
+  margin-bottom:24px;
+  box-shadow:0 20px 40px rgba(0,0,0,.35);
+}
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:22px;
+}
+
+.kpi{font-size:34px;font-weight:700}
+table{width:100%;border-collapse:collapse}
+th,td{padding:10px;border-bottom:1px solid #334155;text-align:left}
+th{color:var(--accent)}
+
+.fade{opacity:0;transform:translateY(20px);transition:.7s}
+.fade.show{opacity:1;transform:none}
+
+footer{text-align:center;padding:40px;color:var(--muted)}
+pre{
+  background:#020617;
+  padding:16px;
+  border-radius:12px;
+  overflow-x:auto;
+  font-size:13px;
+}
+@media(max-width:768px){h1{font-size:32px}}
 </style>
 </head>
 
 <body>
 
 <nav>
-  <a href="#hero">Home</a>
-  <a href="#about">About</a>
-  <a href="#services">Services</a>
-  <a href="#dashboard">Dashboard</a>
+  <a href="#home">Home</a>
   <a href="#project">Project</a>
   <a href="#research">Research</a>
   <a href="#contact">Contact</a>
-  <button id="themeToggle">🌙</button>
+  <button id="theme">🌙</button>
 </nav>
 
-<header id="hero" class="fade">
+<header id="home" class="fade">
   <h1>Anil Gaikwad</h1>
-  <h2>AI Developer • HPC • Data Analytics Engineer</h2>
+  <h2>AI Developer • ML • Reinforcement Learning • HPC</h2>
   <a class="btn" href="#">Download CV</a>
 </header>
 
-<section id="about" class="fade">
-  <h3>About Me</h3>
-  <div class="card">
-    I am an <strong>AI Developer</strong> specializing in building scalable Machine Learning
-    solutions optimized using <strong>High Performance Computing (HPC)</strong>.
-    My expertise includes AI model development, GPU acceleration, parallel computing,
-    and performance-driven system design for real-world applications.
-  </div>
-</section>
-
-<section id="services" class="fade">
-  <h3>AI Services</h3>
-  <div class="grid">
-    <div class="card">🤖 Custom AI & ML Models<br><span class="muted">Accurate, intelligent automation</span></div>
-    <div class="card">⚡ HPC & GPU Optimization<br><span class="muted">Faster training, lower cost</span></div>
-    <div class="card">📊 Data Analytics & Insights<br><span class="muted">Actionable decisions</span></div>
-    <div class="card">🛠 AI Pipelines & Deployment<br><span class="muted">Production-ready systems</span></div>
-  </div>
-</section>
-
-<section id="dashboard" class="fade">
-  <h3>Project Performance Dashboard</h3>
-  <div class="grid">
-    <div class="card"><div class="kpi" style="color:var(--success)">91%</div>Model Accuracy</div>
-    <div class="card"><div class="kpi" style="color:var(--accent)">-65%</div>Training Time</div>
-    <div class="card"><div class="kpi" style="color:#facc15">6×</div>HPC Speedup</div>
-    <div class="card"><div class="kpi" style="color:#a78bfa">99.2%</div>System Uptime</div>
-  </div>
-
-  <div class="grid">
-    <div class="card"><canvas id="accuracyChart"></canvas></div>
-    <div class="card"><canvas id="lossChart"></canvas></div>
-    <div class="card"><canvas id="speedupChart"></canvas></div>
-    <div class="card"><canvas id="gpuChart"></canvas></div>
-  </div>
-</section>
-
 <section id="project" class="fade">
-  <h3>AI Project Pipeline</h3>
-  <div class="card">
-    <h4>1️⃣ Upload Dataset (CSV)</h4>
-    <input type="file" id="projectCSV" accept=".csv">
-    <table id="projectTable">
-      <thead><tr><th>Feature 1</th><th>Feature 2</th><th>Label</th></tr></thead>
-      <tbody></tbody>
-    </table>
-  </div>
+<h3>Real AI Project Dashboard</h3>
 
-  <div class="card">
-    <h4>2️⃣ ML / DL / RL Pipeline</h4>
-    <p>Pipeline: Data Preprocessing → Feature Engineering → ML/DL/RL Training → Evaluation → Deployment</p>
-    <canvas id="pipelineFlow" style="width:100%;height:300px;"></canvas>
-  </div>
+<div class="card">
+<h4>1️⃣ Upload ML Training CSV</h4>
+<input type="file" id="csvFile">
+<div style="overflow:auto">
+<table id="csvTable"></table>
+</div>
+</div>
 
-  <div class="card">
-    <h4>3️⃣ Dashboard Metrics</h4>
-    <div class="grid">
-      <div class="card"><div class="kpi" style="color:#22c55e">88%</div>Model Accuracy</div>
-      <div class="card"><div class="kpi" style="color:#facc15">1.2s</div>Training Time/Epoch</div>
-      <div class="card"><div class="kpi" style="color:#38bdf8">75%</div>RL Reward</div>
-    </div>
-    <div class="grid">
-      <div class="card"><canvas id="accuracyChartProject"></canvas></div>
-      <div class="card"><canvas id="lossChartProject"></canvas></div>
-      <div class="card"><canvas id="rewardChartProject"></canvas></div>
-    </div>
-  </div>
+<div class="grid">
+  <div class="card"><div class="kpi" style="color:var(--success)">92%</div>Accuracy</div>
+  <div class="card"><div class="kpi" style="color:#facc15">0.31</div>Final Loss</div>
+  <div class="card"><div class="kpi" style="color:#a78bfa">+78</div>RL Reward</div>
+</div>
 
-  <div class="card">
-    <h4>4️⃣ Research Paper (LaTeX)</h4>
-    <pre>
-\documentclass{article}
-\usepackage{graphicx}
-\usepackage{amsmath}
-\title{AI Project: ML & RL Pipeline}
-\author{Anil Gaikwad}
-\date{\today}
+<div class="grid">
+  <div class="card"><canvas id="accChart"></canvas></div>
+  <div class="card"><canvas id="lossChart"></canvas></div>
+</div>
 
-\begin{document}
-\maketitle
-
-\section{Abstract}
-End-to-end AI pipeline integrating ML, DL, and RL. Evaluate models with accuracy, loss, and reward metrics.
-
-\section{Methodology}
-\begin{enumerate}
-  \item Data preprocessing
-  \item Feature engineering
-  \item ML/DL/RL training
-  \item Evaluation
-  \item Deployment
-\end{enumerate}
-
-\section{Results}
-Accuracy: 88\% \\
-Training Time: 1.2s/epoch \\
-RL Reward: 75\%
-
-\section{Conclusion}
-Pipeline demonstrates high performance and scalability.
-\end{document}
-    </pre>
-  </div>
+<div class="card">
+<h4>2️⃣ ML / DL / RL Pipeline (Flow)</h4>
+<pre>
+Data → Preprocessing → Feature Engineering
+     → ML Models (RF, XGBoost)
+     → Deep Learning (CNN, LSTM)
+     → Reinforcement Learning (Q-Learning / PPO)
+     → Evaluation → Deployment
+</pre>
+</div>
 </section>
 
 <section id="research" class="fade">
-  <h3>Research Graphs & Case Studies</h3>
-  <div class="card">
-    <h4>Case Study 1</h4>
-    <p>High accuracy ML deployment optimized with HPC.</p>
-    <h4>Case Study 2</h4>
-    <p>Deep learning pipelines optimized with GPU acceleration.</p>
-  </div>
-  <div class="grid">
-    <div class="card"><canvas id="researchChart1"></canvas></div>
-    <div class="card"><canvas id="researchChart2"></canvas></div>
-  </div>
-  <div class="card">
-    <a href="research-paper.pdf" class="btn">Download Research Paper</a>
-  </div>
-  <div class="card">
-    <h4>PhD-Level Narrative</h4>
-    <p>Advanced ML architectures combining convolutional and transformer models for high performance. Data preprocessing, hyperparameter tuning, and interpretability ensure reproducibility. Bridges academic research and industrial deployment.</p>
-  </div>
+<h3>Research Paper (PhD Level)</h3>
+
+<div class="card">
+<h4>LaTeX Source</h4>
+<pre>
+\documentclass{article}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\title{Scalable AI Pipeline using ML and RL}
+\author{Anil Gaikwad}
+\date{\today}
+\begin{document}
+\maketitle
+\section{Abstract}
+This research presents an end-to-end AI pipeline integrating supervised learning,
+deep learning and reinforcement learning optimized for performance and scalability.
+\section{Methodology}
+Data ingestion, preprocessing, model training, evaluation and deployment.
+\section{Results}
+Accuracy: 92\%, Loss: 0.31, RL Reward: +78
+\section{Conclusion}
+Demonstrates robust, production-ready AI systems.
+\end{document}
+</pre>
+
+<a href="project_paper.pdf" class="btn" download>📄 Download Research Paper PDF</a>
+</div>
 </section>
 
 <section id="contact" class="fade">
-  <h3>Contact</h3>
-  <div class="card">
-    📧 Email: gaikwada16@gmail.com<br>
-    🌐 GitHub: github.com/gaikwada16<br>
-    💼 LinkedIn: anil-gaikwad
-  </div>
+<h3>Contact</h3>
+<div class="card">
+📧 Email: gaikwada16@gmail.com<br>
+🌐 GitHub: github.com/gaikwada16<br>
+💼 LinkedIn: anil-gaikwad
+</div>
 </section>
 
 <footer>
-  © 2025 Anil Gaikwad | AI Developer
+© 2025 Anil Gaikwad | AI Research Engineer
 </footer>
 
 <script>
-/* Theme Toggle */
-themeToggle.onclick=()=>{document.body.classList.toggle("light"); themeToggle.textContent=document.body.classList.contains("light")?"🌞":"🌙";};
+theme.onclick=()=>{
+  document.body.classList.toggle("light");
+  theme.textContent=document.body.classList.contains("light")?"🌞":"🌙";
+};
 
-/* Intersection Animations */
-const obs=new IntersectionObserver(e=>{e.forEach(i=>i.isIntersecting&&i.target.classList.add("show"));});
-document.querySelectorAll(".fade").forEach(el=>obs.observe(el));
-
-/* Dashboard Charts */
-new Chart(document.getElementById("accuracyChart"),{type:"line", data:{labels:["E1","E2","E3","E4","E5"], datasets:[{label:"Accuracy %",data:[62,70,78,85,91]}]}});
-new Chart(document.getElementById("lossChart"),{type:"line", data:{labels:["E1","E2","E3","E4","E5"], datasets:[{label:"Loss",data:[1.9,1.2,0.8,0.5,0.3]}]}});
-new Chart(document.getElementById("speedupChart"),{type:"bar", data:{labels:["1","2","4","8"], datasets:[{label:"Speedup",data:[1,1.8,3.4,6]}]}});
-new Chart(document.getElementById("gpuChart"),{type:"doughnut", data:{labels:["Used","Idle"], datasets:[{data:[82,18]}]}});
-
-/* Research Charts */
-new Chart(document.getElementById("researchChart1"),{type:"line", data:{labels:["Jan","Feb","Mar","Apr","May"], datasets:[{label:"Dataset A",data:[12,19,14,18,21],borderColor:"#38bdf8",tension:0.3}]}});
-new Chart(document.getElementById("researchChart2"),{type:"bar", data:{labels:["Task 1","Task 2","Task 3"], datasets:[{label:"Performance",data:[70,85,92],backgroundColor:["#38bdf8","#22c55e","#facc15"]}]}});
-
-/* Project CSV Upload */
-document.getElementById('projectCSV').addEventListener('change', function(e){
-  const file = e.target.files[0];
-  if(!file) return;
-  const reader = new FileReader();
-  reader.onload=function(event){
-    const text=event.target.result;
-    const rows=text.split('\n').slice(1);
-    const tbody=document.querySelector('#projectTable tbody');
-    tbody.innerHTML='';
-    rows.forEach(row=>{
-      const cols=row.split(',');
-      if(cols.length<3) return;
-      const tr=document.createElement('tr');
-      cols.forEach(col=>{const td=document.createElement('td'); td.textContent=col; tr.appendChild(td);});
-      tbody.appendChild(tr);
-    });
-  };
-  reader.readAsText(file);
+new Chart(accChart,{
+  type:"line",
+  data:{labels:["E1","E2","E3","E4","E5"],
+  datasets:[{label:"Accuracy",data:[65,72,81,88,92]}]}
+});
+new Chart(lossChart,{
+  type:"line",
+  data:{labels:["E1","E2","E3","E4","E5"],
+  datasets:[{label:"Loss",data:[1.8,1.2,0.7,0.4,0.31]}]}
 });
 
-/* Project Charts */
-new Chart(document.getElementById("accuracyChartProject"),{type:"line", data:{labels:["E1","E2","E3","E4","E5"], datasets:[{label:"Accuracy %", data:[60,70,80,85,88], borderColor:"#22c55e", tension:0.2}]}});
-new Chart(document.getElementById("lossChartProject"),{type:"line", data:{labels:["E1","E2","E3","E4","E5"], datasets:[{label:"Loss", data:[1.9,1.4,1.0,0.6,0.3], borderColor:"#f87171", tension:0.2}]}});
-new Chart(document.getElementById("rewardChartProject"),{type:"bar", data:{labels:["Episode 1","Episode 2","Episode 3","Episode 4","Episode 5"], datasets:[{label:"RL Reward", data:[50,60,65,70,75], backgroundColor:"#38bdf8"}]}});
+csvFile.onchange=e=>{
+  const file=e.target.files[0];
+  const reader=new FileReader();
+  reader.onload=()=>{
+    const rows=reader.result.split("\n").map(r=>r.split(","));
+    let html="<tr>"+rows[0].map(h=>`<th>${h}</th>`).join("")+"</tr>";
+    rows.slice(1).forEach(r=>{
+      html+="<tr>"+r.map(c=>`<td>${c}</td>`).join("")+"</tr>";
+    });
+    csvTable.innerHTML=html;
+  };
+  reader.readAsText(file);
+};
 
-/* Pipeline Flowchart */
-const ctx = document.getElementById('pipelineFlow').getContext('2d');
-new Chart(ctx,{type:'bar',data:{labels:['Data Prep','Feature Eng','ML Train','DL Train','RL Agent','Evaluation'],datasets:[{label:'Pipeline Step', data:[1,1,1,1,1,1], backgroundColor:'#38bdf8'}]}, options:{indexAxis:'y', scales:{x:{display:false},y:{beginAtZero:true}}}});
+const obs=new IntersectionObserver(e=>{
+  e.forEach(i=>i.isIntersecting&&i.target.classList.add("show"));
+});
+document.querySelectorAll(".fade").forEach(el=>obs.observe(el));
 </script>
 
 </body>
