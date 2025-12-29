@@ -5,6 +5,16 @@
 <title>Anil Gaikwad | AI • HPC • Data Analytics Engineer</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<!-- SEO -->
+<meta name="description" content="Anil Gaikwad – AI, High Performance Computing (HPC), and Data Analytics Engineer. CDAC Mumbai 2025–2026.">
+<meta name="keywords" content="AI Engineer, HPC Engineer, Data Analytics, MPI, CUDA, SLURM, CDAC Mumbai">
+<meta name="author" content="Anil Gaikwad">
+
+<!-- Open Graph -->
+<meta property="og:title" content="Anil Gaikwad | AI • HPC • Data Analytics Engineer">
+<meta property="og:description" content="Professional portfolio showcasing AI, HPC, and Data Analytics projects.">
+<meta property="og:type" content="website">
+
 <!-- Chart.js -->
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
@@ -42,8 +52,8 @@ nav{
   top:0;
   display:flex;
   justify-content:center;
-  align-items:center;
-  gap:20px;
+  flex-wrap:wrap;
+  gap:16px;
   padding:12px;
   background:var(--bg);
   border-bottom:1px solid #1f2937;
@@ -55,11 +65,11 @@ nav a{
   font-weight:600;
 }
 #themeToggle{
-  background:none;
   border:1px solid var(--accent);
+  background:none;
   color:var(--accent);
-  border-radius:20px;
   padding:6px 12px;
+  border-radius:20px;
   cursor:pointer;
 }
 
@@ -71,6 +81,7 @@ header{
 }
 header h1{font-size:42px}
 header h2{color:var(--muted);font-weight:400}
+
 .btn{
   display:inline-block;
   margin:10px;
@@ -89,6 +100,7 @@ section{
   padding:0 20px;
 }
 h3{color:var(--accent);font-size:28px;margin-bottom:20px}
+
 .card{
   background:var(--card);
   padding:24px;
@@ -96,11 +108,13 @@ h3{color:var(--accent);font-size:28px;margin-bottom:20px}
   margin-bottom:24px;
   box-shadow:0 12px 30px rgba(0,0,0,.3);
 }
+
 .grid{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
   gap:20px;
 }
+
 .skill{
   display:inline-block;
   margin:6px;
@@ -110,12 +124,26 @@ h3{color:var(--accent);font-size:28px;margin-bottom:20px}
   border:1px solid #1f2937;
 }
 
-/* CHART */
-.chart-box{
-  background:var(--card);
-  padding:20px;
-  border-radius:16px;
-  margin-bottom:30px;
+/* FORM */
+input, textarea{
+  width:100%;
+  padding:12px;
+  margin:10px 0;
+  border-radius:10px;
+  border:1px solid #1f2937;
+  background:var(--bg);
+  color:var(--text);
+}
+
+/* ANIMATION */
+.fade{
+  opacity:0;
+  transform:translateY(20px);
+  transition:all .6s ease;
+}
+.fade.show{
+  opacity:1;
+  transform:none;
 }
 
 /* FOOTER */
@@ -128,7 +156,6 @@ footer{
 /* MOBILE */
 @media(max-width:768px){
   header h1{font-size:32px}
-  nav{flex-wrap:wrap}
   section{margin:40px auto}
 }
 </style>
@@ -147,61 +174,42 @@ footer{
   <button id="themeToggle">🌙</button>
 </nav>
 
-<header id="hero">
+<header id="hero" class="fade">
   <h1>Anil Gaikwad</h1>
   <h2>AI • HPC • Data Analytics Engineer</h2>
   <a class="btn" href="hpcAi_cv.pdf" download>⬇ Download CV</a>
 </header>
 
-<section id="about">
+<section id="about" class="fade">
   <h3>About Me</h3>
   <div class="card">
-    AI • HPC • Data Analytics Engineer with hands-on experience in
-    parallel computing, GPU acceleration, and scalable AI workflows.
+    AI • HPC • Data Analytics Engineer with hands-on experience in parallel
+    computing, GPU acceleration, and scalable AI workflows.
     CDAC Mumbai (2025–2026).
   </div>
 </section>
 
-<section id="projects">
+<section id="projects" class="fade">
   <h3>Projects</h3>
   <div class="grid">
     <div class="card">
       <h4>Param Access Interface</h4>
       <p>Simplified HPC job submission on SLURM clusters.</p>
-      <p><strong>Tech:</strong> Python, SLURM</p>
     </div>
     <div class="card">
       <h4>HPC-Enabled AI Workflows</h4>
-      <p>Optimized ML training using MPI & CUDA.</p>
-      <p><strong>Tech:</strong> MPI, CUDA</p>
+      <p>Optimized ML training using MPI and CUDA.</p>
     </div>
   </div>
 </section>
 
-<section id="performance">
+<section id="performance" class="fade">
   <h3>Performance Metrics</h3>
-
-  <div class="chart-box">
-    <canvas id="mlChart"></canvas>
-  </div>
-
-  <div class="chart-box">
-    <canvas id="hpcChart"></canvas>
-  </div>
-
-  <div class="grid">
-    <div class="card">
-      <h4>ML Accuracy</h4>
-      Improved from <strong>62%</strong> to <strong>91%</strong>
-    </div>
-    <div class="card">
-      <h4>HPC Speedup</h4>
-      Achieved <strong>6×</strong> speedup on 8-core cluster
-    </div>
-  </div>
+  <canvas id="mlChart"></canvas><br><br>
+  <canvas id="hpcChart"></canvas>
 </section>
 
-<section id="skills">
+<section id="skills" class="fade">
   <h3>Skills</h3>
   <div class="card">
     <span class="skill">Python</span>
@@ -210,23 +218,23 @@ footer{
     <span class="skill">MPI</span>
     <span class="skill">CUDA</span>
     <span class="skill">SLURM</span>
-    <span class="skill">Big Data</span>
     <span class="skill">Linux</span>
   </div>
 </section>
 
-<section id="github">
+<section id="github" class="fade">
   <h3>GitHub Projects</h3>
   <div id="repoList" class="grid"></div>
 </section>
 
-<section id="contact">
-  <h3>Contact</h3>
-  <div class="card">
-    <p>Email: <strong>Gaikwada16@gmail.com</strong></p>
-    <p>GitHub: github.com/gaikwada16</p>
-    <p>LinkedIn: anil-gaikwad-b1554a60</p>
-  </div>
+<section id="contact" class="fade">
+  <h3>Contact Me</h3>
+  <form class="card" action="https://formspree.io/f/xbldnqkr" method="POST">
+    <input type="text" name="name" placeholder="Your Name" required>
+    <input type="email" name="email" placeholder="Your Email" required>
+    <textarea name="message" placeholder="Your Message" required></textarea>
+    <button class="btn" type="submit">Send Message</button>
+  </form>
 </section>
 
 <footer>
@@ -234,23 +242,22 @@ footer{
 </footer>
 
 <script>
-/* Theme Toggle */
-const toggle=document.getElementById("themeToggle");
-toggle.onclick=()=>{
+/* Theme toggle */
+const t=document.getElementById("themeToggle");
+t.onclick=()=>{
   document.body.classList.toggle("light");
-  toggle.textContent=document.body.classList.contains("light")?"🌞":"🌙";
+  t.textContent=document.body.classList.contains("light")?"🌞":"🌙";
 };
 
 /* Charts */
-new Chart(document.getElementById("mlChart"),{
+new Chart(mlChart,{
   type:"line",
   data:{
     labels:["E1","E2","E3","E4","E5"],
     datasets:[{label:"ML Accuracy %",data:[62,70,78,85,91],borderWidth:2}]
   }
 });
-
-new Chart(document.getElementById("hpcChart"),{
+new Chart(hpcChart,{
   type:"bar",
   data:{
     labels:["1","2","4","8 Cores"],
@@ -258,20 +265,23 @@ new Chart(document.getElementById("hpcChart"),{
   }
 });
 
-/* GitHub Repos */
+/* GitHub API */
 fetch("https://api.github.com/users/gaikwada16/repos")
 .then(r=>r.json())
-.then(data=>{
-  const list=document.getElementById("repoList");
-  data.slice(0,6).forEach(repo=>{
-    list.innerHTML+=`
-      <div class="card">
-        <h4>${repo.name}</h4>
-        <p>${repo.description||"No description"}</p>
-        <a href="${repo.html_url}" target="_blank">View Repo</a>
-      </div>`;
-  });
+.then(d=>{
+  repoList.innerHTML=d.slice(0,6).map(r=>`
+    <div class="card">
+      <h4>${r.name}</h4>
+      <p>${r.description||"No description"}</p>
+      <a href="${r.html_url}" target="_blank">View Repo</a>
+    </div>`).join("");
 });
+
+/* Animations */
+const obs=new IntersectionObserver(e=>{
+  e.forEach(i=>i.isIntersecting&&i.target.classList.add("show"));
+});
+document.querySelectorAll(".fade").forEach(el=>obs.observe(el));
 </script>
 
 </body>
