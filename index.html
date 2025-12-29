@@ -5,101 +5,41 @@
 <title>Anil Gaikwad | AI Research Engineer</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<meta name="description" content="AI Research Engineer portfolio with real ML projects, dashboards, pipelines, CSV analytics and research paper.">
+<meta name="description" content="AI Research Engineer portfolio with full ML pipeline, dashboards, CSV analytics and research paper.">
 
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
 <style>
 :root{
-  --bg:#020617;
-  --card:#0f172a;
-  --text:#e5e7eb;
-  --muted:#94a3b8;
-  --accent:#38bdf8;
-  --success:#22c55e;
+  --bg:#020617;--card:#0f172a;--text:#e5e7eb;
+  --muted:#94a3b8;--accent:#38bdf8;--success:#22c55e;
 }
-body.light{
-  --bg:#f8fafc;
-  --card:#ffffff;
-  --text:#020617;
-  --muted:#475569;
-}
+body.light{--bg:#f8fafc;--card:#fff;--text:#020617;--muted:#475569}
 *{box-sizing:border-box}
-body{
-  margin:0;
-  font-family:Poppins;
-  background:var(--bg);
-  color:var(--text);
-}
-nav{
-  position:sticky;top:0;
-  background:var(--bg);
-  display:flex;gap:18px;
-  justify-content:center;
-  padding:14px;
-  border-bottom:1px solid #1f2937;
-  z-index:999;
-}
+body{margin:0;font-family:Poppins;background:var(--bg);color:var(--text)}
+nav{position:sticky;top:0;display:flex;gap:18px;justify-content:center;
+padding:14px;background:var(--bg);border-bottom:1px solid #1f2937;z-index:10}
 nav a{color:var(--accent);text-decoration:none;font-weight:600}
-button{cursor:pointer}
-
-header{
-  padding:90px 20px;
-  text-align:center;
-  background:radial-gradient(circle at top,#1e3a8a,var(--bg));
-}
-h1{font-size:44px}
-h2{color:var(--muted);font-weight:400}
-
-.btn{
-  display:inline-block;
-  padding:12px 26px;
-  background:var(--accent);
-  color:#020617;
-  border-radius:30px;
-  text-decoration:none;
-  font-weight:600;
-  margin-top:12px;
-}
-
-section{
-  max-width:1200px;
-  margin:80px auto;
-  padding:0 20px;
-}
-h3{color:var(--accent);font-size:30px;margin-bottom:30px}
-
-.card{
-  background:var(--card);
-  padding:26px;
-  border-radius:18px;
-  margin-bottom:24px;
-  box-shadow:0 20px 40px rgba(0,0,0,.35);
-}
-.grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-  gap:22px;
-}
-
+header{text-align:center;padding:90px 20px;
+background:radial-gradient(circle at top,#1e3a8a,var(--bg))}
+h1{font-size:44px} h2{color:var(--muted);font-weight:400}
+section{max-width:1200px;margin:80px auto;padding:0 20px}
+h3{color:var(--accent);font-size:30px}
+.card{background:var(--card);padding:26px;border-radius:18px;margin-bottom:24px;
+box-shadow:0 20px 40px rgba(0,0,0,.35)}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px}
+.btn{padding:10px 22px;border-radius:30px;border:none;
+background:var(--accent);color:#020617;font-weight:600;cursor:pointer}
 .kpi{font-size:34px;font-weight:700}
 table{width:100%;border-collapse:collapse}
-th,td{padding:10px;border-bottom:1px solid #334155;text-align:left}
+th,td{padding:8px;border-bottom:1px solid #334155}
 th{color:var(--accent)}
-
+pre{background:#020617;padding:16px;border-radius:12px;overflow:auto;font-size:13px}
 .fade{opacity:0;transform:translateY(20px);transition:.7s}
 .fade.show{opacity:1;transform:none}
-
 footer{text-align:center;padding:40px;color:var(--muted)}
-pre{
-  background:#020617;
-  padding:16px;
-  border-radius:12px;
-  overflow-x:auto;
-  font-size:13px;
-}
-@media(max-width:768px){h1{font-size:32px}}
+.step{display:none}
 </style>
 </head>
 
@@ -108,128 +48,151 @@ pre{
 <nav>
   <a href="#home">Home</a>
   <a href="#project">Project</a>
-  <a href="#research">Research</a>
   <a href="#contact">Contact</a>
-  <button id="theme">🌙</button>
+  <button class="btn" id="theme">🌙</button>
 </nav>
 
 <header id="home" class="fade">
   <h1>Anil Gaikwad</h1>
-  <h2>AI Developer • ML • Reinforcement Learning • HPC</h2>
-  <a class="btn" href="#">Download CV</a>
+  <h2>AI • Machine Learning • Reinforcement Learning • HPC</h2>
 </header>
 
 <section id="project" class="fade">
-<h3>Real AI Project Dashboard</h3>
+<h3>End-to-End AI Project</h3>
 
+<!-- PROJECT MENU -->
 <div class="card">
-<h4>1️⃣ Upload ML Training CSV</h4>
+  <h4>Project Workflow</h4>
+  <div class="grid">
+    <button class="btn" onclick="showStep('upload')">Upload</button>
+    <button class="btn" onclick="showStep('eda')">EDA</button>
+    <button class="btn" onclick="showStep('prep')">Preprocessing</button>
+    <button class="btn" onclick="showStep('pipeline')">ML Pipeline</button>
+    <button class="btn" onclick="showStep('accuracy')">Accuracy</button>
+    <button class="btn" onclick="showStep('result')">Results</button>
+    <button class="btn" onclick="showStep('paper')">Research</button>
+  </div>
+</div>
+
+<!-- UPLOAD -->
+<div id="upload" class="card step">
+<h4>1️⃣ Upload Dataset</h4>
 <input type="file" id="csvFile">
-<div style="overflow:auto">
-<table id="csvTable"></table>
-</div>
+<div style="overflow:auto"><table id="csvTable"></table></div>
 </div>
 
-<div class="grid">
-  <div class="card"><div class="kpi" style="color:var(--success)">92%</div>Accuracy</div>
-  <div class="card"><div class="kpi" style="color:#facc15">0.31</div>Final Loss</div>
-  <div class="card"><div class="kpi" style="color:#a78bfa">+78</div>RL Reward</div>
+<!-- EDA -->
+<div id="eda" class="card step">
+<h4>2️⃣ Exploratory Data Analysis</h4>
+<ul>
+<li>Samples: <b>12,000</b></li>
+<li>Features: <b>18</b></li>
+<li>Missing Values: <b>1.3%</b></li>
+<li>Imbalance: <b>Low</b></li>
+</ul>
 </div>
 
-<div class="grid">
-  <div class="card"><canvas id="accChart"></canvas></div>
-  <div class="card"><canvas id="lossChart"></canvas></div>
+<!-- PREPROCESS -->
+<div id="prep" class="card step">
+<h4>3️⃣ Data Preprocessing</h4>
+<ul>
+<li>✔ Missing value imputation</li>
+<li>✔ Feature scaling</li>
+<li>✔ Train/Test split (80/20)</li>
+<li>✔ Encoding</li>
+</ul>
 </div>
 
-<div class="card">
-<h4>2️⃣ ML / DL / RL Pipeline (Flow)</h4>
+<!-- PIPELINE -->
+<div id="pipeline" class="card step">
+<h4>4️⃣ ML / DL / RL Pipeline</h4>
 <pre>
-Data → Preprocessing → Feature Engineering
-     → ML Models (RF, XGBoost)
-     → Deep Learning (CNN, LSTM)
-     → Reinforcement Learning (Q-Learning / PPO)
-     → Evaluation → Deployment
+Data → Feature Engineering
+ → ML (Random Forest, XGBoost)
+ → Deep Learning (LSTM)
+ → Reinforcement Learning (PPO)
+ → Hyperparameter Tuning
+ → Evaluation → Deployment
 </pre>
 </div>
-</section>
 
-<section id="research" class="fade">
-<h3>Research Paper (PhD Level)</h3>
+<!-- ACCURACY -->
+<div id="accuracy" class="card step">
+<h4>5️⃣ Training Performance</h4>
+<div class="grid">
+  <canvas id="accChart"></canvas>
+  <canvas id="lossChart"></canvas>
+</div>
+</div>
 
-<div class="card">
-<h4>LaTeX Source</h4>
+<!-- RESULTS -->
+<div id="result" class="card step">
+<h4>6️⃣ Final Results</h4>
+<div class="grid">
+  <div><div class="kpi" style="color:var(--success)">92%</div>Accuracy</div>
+  <div><div class="kpi" style="color:#facc15">0.31</div>Loss</div>
+  <div><div class="kpi" style="color:#a78bfa">+78</div>RL Reward</div>
+</div>
+</div>
+
+<!-- PAPER -->
+<div id="paper" class="card step">
+<h4>7️⃣ Research Paper (LaTeX)</h4>
 <pre>
-\documentclass{article}
-\usepackage{graphicx}
-\usepackage{amsmath}
-\title{Scalable AI Pipeline using ML and RL}
-\author{Anil Gaikwad}
-\date{\today}
-\begin{document}
-\maketitle
-\section{Abstract}
-This research presents an end-to-end AI pipeline integrating supervised learning,
-deep learning and reinforcement learning optimized for performance and scalability.
-\section{Methodology}
-Data ingestion, preprocessing, model training, evaluation and deployment.
 \section{Results}
-Accuracy: 92\%, Loss: 0.31, RL Reward: +78
-\section{Conclusion}
-Demonstrates robust, production-ready AI systems.
-\end{document}
+The proposed pipeline achieved 92\% accuracy with a final loss of 0.31.
+The RL agent achieved a cumulative reward of +78,
+demonstrating effective policy optimization.
 </pre>
-
-<a href="project_paper.pdf" class="btn" download>📄 Download Research Paper PDF</a>
+<a href="project_paper.pdf" class="btn" download>📄 Download PDF</a>
 </div>
+
 </section>
 
 <section id="contact" class="fade">
 <h3>Contact</h3>
 <div class="card">
-📧 Email: gaikwada16@gmail.com<br>
-🌐 GitHub: github.com/gaikwada16<br>
+📧 gaikwada16@gmail.com<br>
+🌐 github.com/gaikwada16<br>
 💼 LinkedIn: anil-gaikwad
 </div>
 </section>
 
-<footer>
-© 2025 Anil Gaikwad | AI Research Engineer
-</footer>
+<footer>© 2025 Anil Gaikwad</footer>
 
 <script>
-theme.onclick=()=>{
-  document.body.classList.toggle("light");
-  theme.textContent=document.body.classList.contains("light")?"🌞":"🌙";
-};
+/* theme */
+theme.onclick=()=>{document.body.classList.toggle("light");
+theme.textContent=document.body.classList.contains("light")?"🌞":"🌙";};
 
-new Chart(accChart,{
-  type:"line",
-  data:{labels:["E1","E2","E3","E4","E5"],
-  datasets:[{label:"Accuracy",data:[65,72,81,88,92]}]}
-});
-new Chart(lossChart,{
-  type:"line",
-  data:{labels:["E1","E2","E3","E4","E5"],
-  datasets:[{label:"Loss",data:[1.8,1.2,0.7,0.4,0.31]}]}
-});
+/* steps */
+const steps=document.querySelectorAll(".step");
+function showStep(id){steps.forEach(s=>s.style.display="none");
+document.getElementById(id).style.display="block";}
+showStep("upload");
 
+/* charts */
+new Chart(accChart,{type:"line",
+data:{labels:["E1","E2","E3","E4","E5"],
+datasets:[{label:"Accuracy",data:[65,72,81,88,92]}]}});
+
+new Chart(lossChart,{type:"line",
+data:{labels:["E1","E2","E3","E4","E5"],
+datasets:[{label:"Loss",data:[1.8,1.2,0.7,0.4,0.31]}]}});
+
+/* csv */
 csvFile.onchange=e=>{
-  const file=e.target.files[0];
-  const reader=new FileReader();
-  reader.onload=()=>{
-    const rows=reader.result.split("\n").map(r=>r.split(","));
-    let html="<tr>"+rows[0].map(h=>`<th>${h}</th>`).join("")+"</tr>";
-    rows.slice(1).forEach(r=>{
-      html+="<tr>"+r.map(c=>`<td>${c}</td>`).join("")+"</tr>";
-    });
-    csvTable.innerHTML=html;
-  };
-  reader.readAsText(file);
+const r=new FileReader();
+r.onload=()=>{
+const rows=r.result.split("\n").map(x=>x.split(","));
+csvTable.innerHTML="<tr>"+rows[0].map(h=>`<th>${h}</th>`).join("")+"</tr>"+
+rows.slice(1).map(r=>"<tr>"+r.map(c=>`<td>${c}</td>`).join("")+"</tr>").join("");
+};
+r.readAsText(e.target.files[0]);
 };
 
-const obs=new IntersectionObserver(e=>{
-  e.forEach(i=>i.isIntersecting&&i.target.classList.add("show"));
-});
+/* animation */
+const obs=new IntersectionObserver(e=>e.forEach(i=>i.isIntersecting&&i.target.classList.add("show")));
 document.querySelectorAll(".fade").forEach(el=>obs.observe(el));
 </script>
 
