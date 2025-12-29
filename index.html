@@ -5,74 +5,76 @@
 <title>Anil Gaikwad | AI • HPC • Data Analytics Engineer</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<!-- Chart.js CDN -->
+<!-- Chart.js -->
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
-<!-- Google Font -->
+<!-- Font -->
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
 <style>
 :root{
   --bg:#020617;
   --card:#111827;
-  --accent:#38bdf8;
   --text:#e5e7eb;
   --muted:#9ca3af;
+  --accent:#38bdf8;
 }
 
-html{
-  scroll-behavior:smooth;
+body.light{
+  --bg:#f8fafc;
+  --card:#ffffff;
+  --text:#020617;
+  --muted:#475569;
 }
 
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
 body{
   margin:0;
-  font-family:'Poppins',sans-serif;
+  font-family:Poppins,Arial;
   background:var(--bg);
   color:var(--text);
 }
 
-/* NAVIGATION */
+/* NAV */
 nav{
   position:sticky;
   top:0;
-  background:#020617;
-  padding:14px;
   display:flex;
   justify-content:center;
-  gap:25px;
-  z-index:1000;
+  align-items:center;
+  gap:20px;
+  padding:12px;
+  background:var(--bg);
   border-bottom:1px solid #1f2937;
+  z-index:1000;
 }
-
 nav a{
   color:var(--accent);
   text-decoration:none;
   font-weight:600;
 }
-
-nav a:hover{opacity:.8}
+#themeToggle{
+  background:none;
+  border:1px solid var(--accent);
+  color:var(--accent);
+  border-radius:20px;
+  padding:6px 12px;
+  cursor:pointer;
+}
 
 /* HERO */
 header{
   padding:90px 20px;
   text-align:center;
-  background:radial-gradient(circle at top,#1e3a8a,#020617);
+  background:radial-gradient(circle at top,#1e3a8a,var(--bg));
 }
-
-header h1{
-  font-size:44px;
-  margin-bottom:10px;
-}
-
-header h2{
-  color:var(--muted);
-  font-weight:400;
-}
-
+header h1{font-size:42px}
+header h2{color:var(--muted);font-weight:400}
 .btn{
   display:inline-block;
   margin:10px;
-  padding:12px 26px;
+  padding:12px 24px;
   background:var(--accent);
   color:#020617;
   border-radius:30px;
@@ -86,37 +88,29 @@ section{
   margin:70px auto;
   padding:0 20px;
 }
-
-h3{
-  color:var(--accent);
-  margin-bottom:20px;
-  font-size:28px;
-}
-
+h3{color:var(--accent);font-size:28px;margin-bottom:20px}
 .card{
   background:var(--card);
-  padding:25px;
+  padding:24px;
   border-radius:16px;
-  margin-bottom:25px;
-  box-shadow:0 15px 40px rgba(0,0,0,.4);
+  margin-bottom:24px;
+  box-shadow:0 12px 30px rgba(0,0,0,.3);
 }
-
 .grid{
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
   gap:20px;
 }
-
 .skill{
   display:inline-block;
-  background:#020617;
+  margin:6px;
   padding:10px 16px;
   border-radius:20px;
-  margin:6px;
+  background:var(--bg);
   border:1px solid #1f2937;
 }
 
-/* CHARTS */
+/* CHART */
 .chart-box{
   background:var(--card);
   padding:20px;
@@ -130,67 +124,62 @@ footer{
   padding:30px;
   color:var(--muted);
 }
+
+/* MOBILE */
+@media(max-width:768px){
+  header h1{font-size:32px}
+  nav{flex-wrap:wrap}
+  section{margin:40px auto}
+}
 </style>
 </head>
 
 <body>
 
-<!-- NAV -->
 <nav>
   <a href="#hero">Home</a>
   <a href="#about">About</a>
   <a href="#projects">Projects</a>
   <a href="#performance">Performance</a>
   <a href="#skills">Skills</a>
+  <a href="#github">GitHub</a>
   <a href="#contact">Contact</a>
+  <button id="themeToggle">🌙</button>
 </nav>
 
-<!-- HERO -->
 <header id="hero">
   <h1>Anil Gaikwad</h1>
   <h2>AI • HPC • Data Analytics Engineer</h2>
   <a class="btn" href="hpcAi_cv.pdf" download>⬇ Download CV</a>
 </header>
 
-<!-- ABOUT -->
 <section id="about">
   <h3>About Me</h3>
   <div class="card">
-    <p>
-      AI • HPC • Data Analytics Engineer with hands-on experience in
-      High Performance Computing, parallel programming, and AI-driven analytics.
-      Currently pursuing the <strong>Advanced Certificate in HPC-AI at CDAC Mumbai (2025–2026)</strong>.
-    </p>
+    AI • HPC • Data Analytics Engineer with hands-on experience in
+    parallel computing, GPU acceleration, and scalable AI workflows.
+    CDAC Mumbai (2025–2026).
   </div>
 </section>
 
-<!-- PROJECTS -->
 <section id="projects">
   <h3>Projects</h3>
   <div class="grid">
     <div class="card">
       <h4>Param Access Interface</h4>
-      <p>
-        Web-based interface to simplify HPC job configuration and submission
-        on SLURM clusters.
-      </p>
-      <p><strong>Tech:</strong> Python, SLURM, HPC</p>
+      <p>Simplified HPC job submission on SLURM clusters.</p>
+      <p><strong>Tech:</strong> Python, SLURM</p>
     </div>
-
     <div class="card">
       <h4>HPC-Enabled AI Workflows</h4>
-      <p>
-        Optimized AI/ML model training using MPI and CUDA
-        on multi-node clusters.
-      </p>
-      <p><strong>Tech:</strong> MPI, CUDA, AI/ML</p>
+      <p>Optimized ML training using MPI & CUDA.</p>
+      <p><strong>Tech:</strong> MPI, CUDA</p>
     </div>
   </div>
 </section>
 
-<!-- PERFORMANCE -->
 <section id="performance">
-  <h3>Performance Charts</h3>
+  <h3>Performance Metrics</h3>
 
   <div class="chart-box">
     <canvas id="mlChart"></canvas>
@@ -199,25 +188,38 @@ footer{
   <div class="chart-box">
     <canvas id="hpcChart"></canvas>
   </div>
+
+  <div class="grid">
+    <div class="card">
+      <h4>ML Accuracy</h4>
+      Improved from <strong>62%</strong> to <strong>91%</strong>
+    </div>
+    <div class="card">
+      <h4>HPC Speedup</h4>
+      Achieved <strong>6×</strong> speedup on 8-core cluster
+    </div>
+  </div>
 </section>
 
-<!-- SKILLS -->
 <section id="skills">
   <h3>Skills</h3>
   <div class="card">
     <span class="skill">Python</span>
-    <span class="skill">Machine Learning</span>
     <span class="skill">AI</span>
+    <span class="skill">Machine Learning</span>
     <span class="skill">MPI</span>
     <span class="skill">CUDA</span>
     <span class="skill">SLURM</span>
     <span class="skill">Big Data</span>
-    <span class="skill">Spark</span>
     <span class="skill">Linux</span>
   </div>
 </section>
 
-<!-- CONTACT -->
+<section id="github">
+  <h3>GitHub Projects</h3>
+  <div id="repoList" class="grid"></div>
+</section>
+
 <section id="contact">
   <h3>Contact</h3>
   <div class="card">
@@ -231,29 +233,44 @@ footer{
   © 2025 Anil Gaikwad | AI • HPC • Data Analytics Engineer
 </footer>
 
-<!-- CHART SCRIPTS -->
 <script>
-new Chart(document.getElementById("mlChart"), {
-  type: "line",
-  data: {
-    labels: ["Epoch 1","Epoch 2","Epoch 3","Epoch 4","Epoch 5"],
-    datasets: [{
-      label: "ML Accuracy (%)",
-      data: [65,72,80,88,92],
-      borderWidth: 2
-    }]
+/* Theme Toggle */
+const toggle=document.getElementById("themeToggle");
+toggle.onclick=()=>{
+  document.body.classList.toggle("light");
+  toggle.textContent=document.body.classList.contains("light")?"🌞":"🌙";
+};
+
+/* Charts */
+new Chart(document.getElementById("mlChart"),{
+  type:"line",
+  data:{
+    labels:["E1","E2","E3","E4","E5"],
+    datasets:[{label:"ML Accuracy %",data:[62,70,78,85,91],borderWidth:2}]
   }
 });
 
-new Chart(document.getElementById("hpcChart"), {
-  type: "bar",
-  data: {
-    labels: ["1 Core","2 Cores","4 Cores","8 Cores"],
-    datasets: [{
-      label: "HPC Speedup",
-      data: [1,1.9,3.3,6.2]
-    }]
+new Chart(document.getElementById("hpcChart"),{
+  type:"bar",
+  data:{
+    labels:["1","2","4","8 Cores"],
+    datasets:[{label:"HPC Speedup",data:[1,1.8,3.4,6]}]
   }
+});
+
+/* GitHub Repos */
+fetch("https://api.github.com/users/gaikwada16/repos")
+.then(r=>r.json())
+.then(data=>{
+  const list=document.getElementById("repoList");
+  data.slice(0,6).forEach(repo=>{
+    list.innerHTML+=`
+      <div class="card">
+        <h4>${repo.name}</h4>
+        <p>${repo.description||"No description"}</p>
+        <a href="${repo.html_url}" target="_blank">View Repo</a>
+      </div>`;
+  });
 });
 </script>
 
