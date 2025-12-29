@@ -1,159 +1,261 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Anil Gaikwad | AI • HPC • Data Analytics Engineer</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<title>Anil Gaikwad | AI • HPC • Data Analytics Engineer</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, Helvetica, sans-serif;
-      background-color: #0f172a;
-      color: #e5e7eb;
-      line-height: 1.6;
-    }
-    header {
-      background: linear-gradient(135deg, #2563eb, #1e40af);
-      padding: 40px;
-      text-align: center;
-    }
-    header h1 {
-      margin: 0;
-      font-size: 36px;
-    }
-    header p {
-      font-size: 18px;
-      margin: 8px 0;
-    }
-    header a {
-      color: #fde68a;
-      text-decoration: none;
-      font-weight: bold;
-      margin: 0 8px;
-    }
-    section {
-      background: #020617;
-      margin: 30px;
-      padding: 30px;
-      border-radius: 14px;
-      box-shadow: 0 10px 20px rgba(0,0,0,0.4);
-    }
-    h2 {
-      color: #60a5fa;
-      border-bottom: 2px solid #1e40af;
-      padding-bottom: 6px;
-      margin-bottom: 15px;
-    }
-    ul {
-      padding-left: 20px;
-    }
-    li {
-      margin-bottom: 10px;
-    }
-    .project {
-      margin-bottom: 20px;
-      padding: 15px;
-      border-left: 4px solid #2563eb;
-      background: #020617;
-      border-radius: 8px;
-    }
-    .btn {
-      display: inline-block;
-      padding: 12px 20px;
-      background: #2563eb;
-      color: white;
-      text-decoration: none;
-      border-radius: 8px;
-      font-weight: bold;
-      margin-top: 10px;
-    }
-    footer {
-      text-align: center;
-      padding: 20px;
-      color: #9ca3af;
-      font-size: 14px;
-    }
-    @media (max-width: 768px) {
-      section { margin: 15px; }
-      header h1 { font-size: 28px; }
-    }
-  </style>
+<!-- Chart.js CDN -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<!-- Google Font -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --bg:#020617;
+  --card:#111827;
+  --accent:#38bdf8;
+  --text:#e5e7eb;
+  --muted:#9ca3af;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  margin:0;
+  font-family:'Poppins',sans-serif;
+  background:var(--bg);
+  color:var(--text);
+}
+
+/* NAVIGATION */
+nav{
+  position:sticky;
+  top:0;
+  background:#020617;
+  padding:14px;
+  display:flex;
+  justify-content:center;
+  gap:25px;
+  z-index:1000;
+  border-bottom:1px solid #1f2937;
+}
+
+nav a{
+  color:var(--accent);
+  text-decoration:none;
+  font-weight:600;
+}
+
+nav a:hover{opacity:.8}
+
+/* HERO */
+header{
+  padding:90px 20px;
+  text-align:center;
+  background:radial-gradient(circle at top,#1e3a8a,#020617);
+}
+
+header h1{
+  font-size:44px;
+  margin-bottom:10px;
+}
+
+header h2{
+  color:var(--muted);
+  font-weight:400;
+}
+
+.btn{
+  display:inline-block;
+  margin:10px;
+  padding:12px 26px;
+  background:var(--accent);
+  color:#020617;
+  border-radius:30px;
+  text-decoration:none;
+  font-weight:600;
+}
+
+/* SECTIONS */
+section{
+  max-width:1100px;
+  margin:70px auto;
+  padding:0 20px;
+}
+
+h3{
+  color:var(--accent);
+  margin-bottom:20px;
+  font-size:28px;
+}
+
+.card{
+  background:var(--card);
+  padding:25px;
+  border-radius:16px;
+  margin-bottom:25px;
+  box-shadow:0 15px 40px rgba(0,0,0,.4);
+}
+
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:20px;
+}
+
+.skill{
+  display:inline-block;
+  background:#020617;
+  padding:10px 16px;
+  border-radius:20px;
+  margin:6px;
+  border:1px solid #1f2937;
+}
+
+/* CHARTS */
+.chart-box{
+  background:var(--card);
+  padding:20px;
+  border-radius:16px;
+  margin-bottom:30px;
+}
+
+/* FOOTER */
+footer{
+  text-align:center;
+  padding:30px;
+  color:var(--muted);
+}
+</style>
 </head>
 
 <body>
 
-<header>
+<!-- NAV -->
+<nav>
+  <a href="#hero">Home</a>
+  <a href="#about">About</a>
+  <a href="#projects">Projects</a>
+  <a href="#performance">Performance</a>
+  <a href="#skills">Skills</a>
+  <a href="#contact">Contact</a>
+</nav>
+
+<!-- HERO -->
+<header id="hero">
   <h1>Anil Gaikwad</h1>
-  <p><strong>AI • HPC • Data Analytics Engineer</strong></p>
-  <p>
-    📧 <a href="mailto:Gaikwada16@gmail.com">Gaikwada16@gmail.com</a> |
-    📞 +91 9922190292 |
-    🔗 <a href="https://www.linkedin.com/in/anil-gaikwad-b1554a60" target="_blank">LinkedIn</a>
-  </p>
-  <a class="btn" href="Anil_Gaikwad_CV.pdf" download>⬇ Download CV</a>
+  <h2>AI • HPC • Data Analytics Engineer</h2>
+  <a class="btn" href="hpcAi_cv.pdf" download>⬇ Download CV</a>
 </header>
 
-<section>
-  <h2>Profile</h2>
-  <p>
-    Detail-oriented and results-driven <strong>Data Analyst</strong> with a strong foundation in
-    <strong>Artificial Intelligence, Big Data Analytics, and High Performance Computing (HPC)</strong>.
-    Proven ability to extract insights from large and complex datasets and optimize AI workloads
-    using parallel and GPU-based computing.
-  </p>
+<!-- ABOUT -->
+<section id="about">
+  <h3>About Me</h3>
+  <div class="card">
+    <p>
+      AI • HPC • Data Analytics Engineer with hands-on experience in
+      High Performance Computing, parallel programming, and AI-driven analytics.
+      Currently pursuing the <strong>Advanced Certificate in HPC-AI at CDAC Mumbai (2025–2026)</strong>.
+    </p>
+  </div>
 </section>
 
-<section>
-  <h2>Education</h2>
-  <ul>
-    <li><strong>Advanced Certificate Course in HPC-AI</strong> – CDAC Mumbai (2025–2026)</li>
-    <li><strong>Advanced Diploma in Big Data Analytics</strong> – 80%</li>
-    <li><strong>MCA Engineering</strong> – PES Modern College of Engineering, Pune (2014–2016)</li>
-    <li><strong>B.Sc Computer Science</strong> – SRTMUN University, Nanded (2010–2014)</li>
-  </ul>
+<!-- PROJECTS -->
+<section id="projects">
+  <h3>Projects</h3>
+  <div class="grid">
+    <div class="card">
+      <h4>Param Access Interface</h4>
+      <p>
+        Web-based interface to simplify HPC job configuration and submission
+        on SLURM clusters.
+      </p>
+      <p><strong>Tech:</strong> Python, SLURM, HPC</p>
+    </div>
+
+    <div class="card">
+      <h4>HPC-Enabled AI Workflows</h4>
+      <p>
+        Optimized AI/ML model training using MPI and CUDA
+        on multi-node clusters.
+      </p>
+      <p><strong>Tech:</strong> MPI, CUDA, AI/ML</p>
+    </div>
+  </div>
 </section>
 
-<section>
-  <h2>Experience & Projects</h2>
+<!-- PERFORMANCE -->
+<section id="performance">
+  <h3>Performance Charts</h3>
 
-  <div class="project">
-    <h3>HPC & AI Projects – CDAC Mumbai (2025–2026)</h3>
-    <ul>
-      <li>Designed HPC-enabled AI workflows using MPI and OpenMP</li>
-      <li>Developed a <strong>Param Access Interface</strong> for simplified HPC job configuration</li>
-      <li>Optimized AI/ML workloads using CPU/GPU resource management</li>
-      <li>Worked with SLURM scheduler for cluster-based execution</li>
-    </ul>
-    <p><strong>Technologies:</strong> MPI, OpenMP, CUDA, SLURM, Python, AI/ML, Linux</p>
+  <div class="chart-box">
+    <canvas id="mlChart"></canvas>
   </div>
 
+  <div class="chart-box">
+    <canvas id="hpcChart"></canvas>
+  </div>
 </section>
 
-<section>
-  <h2>Skills</h2>
-  <ul>
-    <li><strong>Data Analytics:</strong> Python, R, SQL, Pandas, NumPy, Power BI, Tableau</li>
-    <li><strong>AI & ML:</strong> TensorFlow, PyTorch, Keras, Scikit-learn</li>
-    <li><strong>AI Domains:</strong> NLP, Computer Vision, LLMs (GPT, BERT)</li>
-    <li><strong>HPC:</strong> MPI, OpenMP, CUDA, SLURM, PBS, InfiniBand</li>
-    <li><strong>Big Data & Cloud:</strong> Spark, Databricks, AWS, GCP</li>
-    <li><strong>Tools:</strong> Git, Jupyter, Airflow, Agile</li>
-  </ul>
+<!-- SKILLS -->
+<section id="skills">
+  <h3>Skills</h3>
+  <div class="card">
+    <span class="skill">Python</span>
+    <span class="skill">Machine Learning</span>
+    <span class="skill">AI</span>
+    <span class="skill">MPI</span>
+    <span class="skill">CUDA</span>
+    <span class="skill">SLURM</span>
+    <span class="skill">Big Data</span>
+    <span class="skill">Spark</span>
+    <span class="skill">Linux</span>
+  </div>
 </section>
 
-<section>
-  <h2>Hobbies</h2>
-  <ul>
-    <li>Research on new technologies</li>
-    <li>Reading books</li>
-    <li>Traveling</li>
-  </ul>
+<!-- CONTACT -->
+<section id="contact">
+  <h3>Contact</h3>
+  <div class="card">
+    <p>Email: <strong>Gaikwada16@gmail.com</strong></p>
+    <p>GitHub: github.com/gaikwada16</p>
+    <p>LinkedIn: anil-gaikwad-b1554a60</p>
+  </div>
 </section>
 
 <footer>
   © 2025 Anil Gaikwad | AI • HPC • Data Analytics Engineer
 </footer>
+
+<!-- CHART SCRIPTS -->
+<script>
+new Chart(document.getElementById("mlChart"), {
+  type: "line",
+  data: {
+    labels: ["Epoch 1","Epoch 2","Epoch 3","Epoch 4","Epoch 5"],
+    datasets: [{
+      label: "ML Accuracy (%)",
+      data: [65,72,80,88,92],
+      borderWidth: 2
+    }]
+  }
+});
+
+new Chart(document.getElementById("hpcChart"), {
+  type: "bar",
+  data: {
+    labels: ["1 Core","2 Cores","4 Cores","8 Cores"],
+    datasets: [{
+      label: "HPC Speedup",
+      data: [1,1.9,3.3,6.2]
+    }]
+  }
+});
+</script>
 
 </body>
 </html>
