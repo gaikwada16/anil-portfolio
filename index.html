@@ -2,17 +2,17 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Anil Gaikwad | AI • HPC • Data Analytics Engineer</title>
+<title>Anil Gaikwad | AI Developer • HPC • Data Analytics</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <!-- SEO -->
-<meta name="description" content="Anil Gaikwad – AI, High Performance Computing (HPC), and Data Analytics Engineer. CDAC Mumbai 2025–2026.">
-<meta name="keywords" content="AI Engineer, HPC Engineer, Data Analytics, MPI, CUDA, SLURM, CDAC Mumbai">
+<meta name="description" content="Anil Gaikwad – AI Developer specializing in Machine Learning, High Performance Computing (HPC), and Data Analytics.">
+<meta name="keywords" content="AI Developer, Machine Learning Engineer, HPC Engineer, Data Analytics, Python, CUDA, MPI, SLURM">
 <meta name="author" content="Anil Gaikwad">
 
 <!-- Open Graph -->
-<meta property="og:title" content="Anil Gaikwad | AI • HPC • Data Analytics Engineer">
-<meta property="og:description" content="Professional portfolio showcasing AI, HPC, and Data Analytics projects.">
+<meta property="og:title" content="Anil Gaikwad | AI Developer">
+<meta property="og:description" content="AI, HPC, and Data Analytics portfolio">
 <meta property="og:type" content="website">
 
 <!-- Chart.js -->
@@ -29,14 +29,12 @@
   --muted:#9ca3af;
   --accent:#38bdf8;
 }
-
 body.light{
   --bg:#f8fafc;
   --card:#ffffff;
   --text:#020617;
   --muted:#475569;
 }
-
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{
@@ -48,29 +46,20 @@ body{
 
 /* NAV */
 nav{
-  position:sticky;
-  top:0;
-  display:flex;
+  position:sticky;top:0;
+  display:flex;flex-wrap:wrap;
   justify-content:center;
-  flex-wrap:wrap;
   gap:16px;
   padding:12px;
   background:var(--bg);
   border-bottom:1px solid #1f2937;
   z-index:1000;
 }
-nav a{
-  color:var(--accent);
-  text-decoration:none;
-  font-weight:600;
-}
+nav a{color:var(--accent);text-decoration:none;font-weight:600}
 #themeToggle{
   border:1px solid var(--accent);
-  background:none;
-  color:var(--accent);
-  padding:6px 12px;
-  border-radius:20px;
-  cursor:pointer;
+  background:none;color:var(--accent);
+  padding:6px 12px;border-radius:20px;cursor:pointer;
 }
 
 /* HERO */
@@ -136,24 +125,12 @@ input, textarea{
 }
 
 /* ANIMATION */
-.fade{
-  opacity:0;
-  transform:translateY(20px);
-  transition:all .6s ease;
-}
-.fade.show{
-  opacity:1;
-  transform:none;
-}
+.fade{opacity:0;transform:translateY(20px);transition:.6s}
+.fade.show{opacity:1;transform:none}
 
 /* FOOTER */
-footer{
-  text-align:center;
-  padding:30px;
-  color:var(--muted);
-}
+footer{text-align:center;padding:30px;color:var(--muted)}
 
-/* MOBILE */
 @media(max-width:768px){
   header h1{font-size:32px}
   section{margin:40px auto}
@@ -166,6 +143,7 @@ footer{
 <nav>
   <a href="#hero">Home</a>
   <a href="#about">About</a>
+  <a href="#services">Services</a>
   <a href="#projects">Projects</a>
   <a href="#performance">Performance</a>
   <a href="#skills">Skills</a>
@@ -176,30 +154,61 @@ footer{
 
 <header id="hero" class="fade">
   <h1>Anil Gaikwad</h1>
-  <h2>AI • HPC • Data Analytics Engineer</h2>
-  <a class="btn" href="hpcAi_cv.pdf" download>⬇ Download CV</a>
+  <h2>AI Developer • HPC • Data Analytics Engineer</h2>
+  <a class="btn" href="#" download>⬇ Download CV</a>
 </header>
 
 <section id="about" class="fade">
   <h3>About Me</h3>
   <div class="card">
-    AI • HPC • Data Analytics Engineer with hands-on experience in parallel
-    computing, GPU acceleration, and scalable AI workflows.
-    CDAC Mumbai (2025–2026).
+    I am an <strong>AI Developer</strong> specializing in <strong>Machine Learning,
+    High Performance Computing (HPC), and Data Analytics</strong>.
+    I build scalable, high-performance AI systems that transform data
+    into intelligent, business-ready solutions.
+  </div>
+</section>
+
+<section id="services" class="fade">
+  <h3>AI Services & Expertise</h3>
+  <div class="grid">
+    <div class="card">
+      <h4>🤖 AI & Machine Learning</h4>
+      Custom ML models for prediction, classification, automation.
+      <br><strong>Client Benefit:</strong> Accurate & intelligent systems.
+    </div>
+    <div class="card">
+      <h4>⚡ HPC Optimization</h4>
+      GPU acceleration, MPI-based parallel computing.
+      <br><strong>Client Benefit:</strong> Faster training, lower cost.
+    </div>
+    <div class="card">
+      <h4>📊 Data Analytics</h4>
+      Data preprocessing, EDA, visualization.
+      <br><strong>Client Benefit:</strong> Actionable insights.
+    </div>
+    <div class="card">
+      <h4>🛠 AI Pipelines</h4>
+      End-to-end AI pipelines from data to deployment.
+      <br><strong>Client Benefit:</strong> Production-ready systems.
+    </div>
+    <div class="card">
+      <h4>☁ Deployment</h4>
+      Model integration, monitoring, optimization.
+      <br><strong>Client Benefit:</strong> Reliable AI solutions.
+    </div>
+    <div class="card">
+      <h4>📈 Consulting</h4>
+      AI architecture & performance guidance.
+      <br><strong>Client Benefit:</strong> Expert support.
+    </div>
   </div>
 </section>
 
 <section id="projects" class="fade">
   <h3>Projects</h3>
   <div class="grid">
-    <div class="card">
-      <h4>Param Access Interface</h4>
-      <p>Simplified HPC job submission on SLURM clusters.</p>
-    </div>
-    <div class="card">
-      <h4>HPC-Enabled AI Workflows</h4>
-      <p>Optimized ML training using MPI and CUDA.</p>
-    </div>
+    <div class="card">Param Access Interface – HPC job management</div>
+    <div class="card">HPC-Accelerated AI Training</div>
   </div>
 </section>
 
@@ -228,56 +237,47 @@ footer{
 </section>
 
 <section id="contact" class="fade">
-  <h3>Contact Me</h3>
+  <h3>Contact</h3>
   <form class="card" action="https://formspree.io/f/xbldnqkr" method="POST">
-    <input type="text" name="name" placeholder="Your Name" required>
-    <input type="email" name="email" placeholder="Your Email" required>
+    <input name="name" placeholder="Your Name" required>
+    <input name="email" type="email" placeholder="Your Email" required>
     <textarea name="message" placeholder="Your Message" required></textarea>
-    <button class="btn" type="submit">Send Message</button>
+    <button class="btn">Send Message</button>
   </form>
 </section>
 
 <footer>
-  © 2025 Anil Gaikwad | AI • HPC • Data Analytics Engineer
+  © 2025 Anil Gaikwad | AI Developer
 </footer>
 
 <script>
-/* Theme toggle */
-const t=document.getElementById("themeToggle");
-t.onclick=()=>{
+themeToggle.onclick=()=>{
   document.body.classList.toggle("light");
-  t.textContent=document.body.classList.contains("light")?"🌞":"🌙";
+  themeToggle.textContent=document.body.classList.contains("light")?"🌞":"🌙";
 };
 
-/* Charts */
 new Chart(mlChart,{
   type:"line",
-  data:{
-    labels:["E1","E2","E3","E4","E5"],
-    datasets:[{label:"ML Accuracy %",data:[62,70,78,85,91],borderWidth:2}]
-  }
+  data:{labels:["E1","E2","E3","E4","E5"],
+  datasets:[{label:"ML Accuracy %",data:[62,70,78,85,91]}]}
 });
 new Chart(hpcChart,{
   type:"bar",
-  data:{
-    labels:["1","2","4","8 Cores"],
-    datasets:[{label:"HPC Speedup",data:[1,1.8,3.4,6]}]
-  }
+  data:{labels:["1","2","4","8 Cores"],
+  datasets:[{label:"HPC Speedup",data:[1,1.8,3.4,6]}]}
 });
 
-/* GitHub API */
 fetch("https://api.github.com/users/gaikwada16/repos")
 .then(r=>r.json())
 .then(d=>{
   repoList.innerHTML=d.slice(0,6).map(r=>`
-    <div class="card">
-      <h4>${r.name}</h4>
-      <p>${r.description||"No description"}</p>
-      <a href="${r.html_url}" target="_blank">View Repo</a>
-    </div>`).join("");
+  <div class="card">
+    <h4>${r.name}</h4>
+    <p>${r.description||"No description"}</p>
+    <a href="${r.html_url}" target="_blank">View Repo</a>
+  </div>`).join("");
 });
 
-/* Animations */
 const obs=new IntersectionObserver(e=>{
   e.forEach(i=>i.isIntersecting&&i.target.classList.add("show"));
 });
@@ -286,87 +286,3 @@ document.querySelectorAll(".fade").forEach(el=>obs.observe(el));
 
 </body>
 </html>
-<section id="about" class="fade">
-  <h3>About Me</h3>
-  <div class="card">
-    <p>
-      I am an <strong>AI Developer</strong> with expertise in 
-      <strong>Artificial Intelligence, Machine Learning, High Performance Computing (HPC), 
-      and Data Analytics</strong>. I specialize in building scalable, high-performance AI systems
-      that convert complex data into actionable business insights.
-    </p>
-    <p>
-      My work focuses on designing intelligent models, accelerating AI workloads using
-      parallel computing and GPUs, and deploying production-ready AI solutions.
-      I have hands-on experience with <strong>Python, Machine Learning frameworks, MPI, CUDA,
-      SLURM, and Linux-based HPC environments</strong>.
-    </p>
-    <p>
-      I aim to deliver AI solutions that are <strong>accurate, scalable, cost-efficient,
-      and optimized for real-world performance</strong>.
-    </p>
-  </div>
-</section>
-<section id="services" class="fade">
-  <h3>AI Services & Expertise</h3>
-
-  <div class="grid">
-
-    <div class="card">
-      <h4>🤖 AI & Machine Learning Development</h4>
-      <p>
-        Design and development of custom Machine Learning and AI models for prediction,
-        classification, automation, and decision-making.
-      </p>
-      <p><strong>Value to Client:</strong> Accurate, intelligent systems that improve business efficiency.</p>
-    </div>
-
-    <div class="card">
-      <h4>⚡ High Performance AI Optimization</h4>
-      <p>
-        Accelerating AI and ML workloads using GPU computing, parallel processing,
-        and distributed training on HPC clusters.
-      </p>
-      <p><strong>Value to Client:</strong> Faster model training, reduced compute cost.</p>
-    </div>
-
-    <div class="card">
-      <h4>📊 Data Analytics & Insights</h4>
-      <p>
-        Data preprocessing, analysis, visualization, and statistical modeling
-        to extract meaningful insights from large datasets.
-      </p>
-      <p><strong>Value to Client:</strong> Data-driven decision making.</p>
-    </div>
-
-    <div class="card">
-      <h4>🛠️ Scalable AI Pipelines</h4>
-      <p>
-        End-to-end AI pipeline development including data ingestion,
-        model training, evaluation, and deployment.
-      </p>
-      <p><strong>Value to Client:</strong> Production-ready, scalable AI solutions.</p>
-    </div>
-
-    <div class="card">
-      <h4>☁️ Deployment & Integration</h4>
-      <p>
-        Deployment of AI models into real-world systems with performance monitoring
-        and optimization.
-      </p>
-      <p><strong>Value to Client:</strong> Reliable AI systems ready for real usage.</p>
-    </div>
-
-    <div class="card">
-      <h4>📈 AI Consulting & Support</h4>
-      <p>
-        AI architecture guidance, performance benchmarking, optimization strategies,
-        and continuous improvement.
-      </p>
-      <p><strong>Value to Client:</strong> Expert guidance and long-term support.</p>
-    </div>
-
-  </div>
-</section>
-
-
